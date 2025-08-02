@@ -1,93 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repositorio_Pedro_Baez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Repositorio Pedro Baez</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="heading">
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#yo">Sobre Mi</a></li>
-        <li><a href="#hab">Habilidades</a></li>
-        <li><a href="#exp">Experiencia</a></li>
-        <li><a href="#cont">Contacto</a></li>
-      </ul>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <nav class="menu">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#yo">Sobre mí</a></li>
+          <li><a href="#hab">Habilidades</a></li>
+          <li><a href="#exp">Experiencia</a></li>
+          <li><a href="#cont">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
+
     <main>
-      <section class="titulo" id="inicio">
-        <img src="img/logo.jpeg" alt="fotomia" />
+      <section class="titulo" >
+        <img src="img/logo.jpeg" alt="Foto de Pedro" />
         <div class="nombre">
-          <h1>Hola! Soy Pedro Baez</h1>
-          <h2>Tecnico Informatico y futuro Frontend</h2>
+          <h1 id="inicio">Pedro Gabriel Baez</h1>
+          <h2>Técnico Informático y futuro Desarrollador Frontend</h2>
+          <p>
+            Apasionado por la tecnología, el diseño web y la resolución de problemas técnicos. Me destaco por mi responsabilidad, trato con el cliente y constancia en el aprendizaje de nuevas herramientas y lenguajes de programación.
+          </p>
         </div>
       </section>
-      <section class="sobremi" id="yo">
-        <h3>Sobre mi</h3>
+
+      <section class="sobremi" >
+        <h3 id="yo">Sobre mí</h3>
         <p>
-          Mi nombre es Pedro G. Baez soy un joven Tecnico Informatico,
-          actualmente me encuentro estudiando para poder volverme un
-          desarrollador Frontend, vivo en Argentina, Buenos Aires.
+          Mi nombre es Pedro Gabriel Baez, soy un Técnico Informático con una fuerte vocación por el desarrollo web y la asistencia técnica. Vivo en Buenos Aires, Argentina, y desde joven he tenido un gran interés por comprender cómo funcionan las computadoras y los sistemas.
         </p>
         <p>
-          Actualmente tengo un emprendimiento donde realizo servicio tecnico a
-          diferentes dispostivos electronicos
+          Actualmente, me encuentro en un proceso de formación autodidacta para convertirme en desarrollador frontend. Dedico gran parte de mi tiempo libre a estudiar HTML, CSS, JavaScript y herramientas modernas como Bootstrap. Me esfuerzo en crear interfaces atractivas y accesibles, priorizando siempre una buena experiencia para el usuario.
+        </p>
+        <p>
+          Además, gestiono un emprendimiento personal de servicio técnico, donde brindo asistencia a clientes con problemas en sus dispositivos: desde mantenimiento de PC y notebooks hasta configuraciones de red y diagnósticos avanzados. Esto me ha permitido desarrollar habilidades tanto técnicas como interpersonales.
         </p>
       </section>
-      <section class="habilidades" id="hab">
-        <h3>Habilidades</h3>
+
+      <section class="habilidades" >
+        <h3 id="hab">Habilidades</h3>
         <div class="leng_prog">
-          <h4>Lenguajes de Programacion</h4>
-          <!-- colocar iconos de lenguajes de programacion y su niveles -->
+          <h4>Lenguajes de Programación y herramientas</h4>
+          <div class="icons_prog">
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML" />
+              <p>HTML (Avanzado)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/css3.png" alt="CSS" />
+              <p>CSS (Medio)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript" />
+              <p>JavaScript (Básico)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python" />
+              <p>Python (Básico-Medio)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/fluency/50/sql.png" alt="SQL" />
+              <p>SQL (Medio)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap" />
+              <p>Bootstrap (Medio)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/ios-filled/50/github.png" alt="GitHub" />
+              <p>GitHub (Medio)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/48/visual-studio-code-2019.png" alt="VS Code" />
+              <p>Visual Studio Code (Alto)</p>
+            </div>
+            <div class="con_icon">
+              <img src="https://img.icons8.com/color/144/c-plus-plus-logo.png" alt="C++" />
+              <p>C++ (Medio)</p>
+            </div>
+          </div>
         </div>
-        <div class="informa">
-          <h4>Trabajo de escritorio</h4>
-          <!-- colocar iconos sobre tareas de escritorio o recepcion y sus niveles -->
-        </div>
-        <div class="habi_tecnico">
-          <h4>Conocimiento Informatico</h4>
-        </div>
-      </section>
-      <section class="experiencia" id="exp">
-        <h3>Experiencia</h3>
+        <div class="listas-dobles">
+  <div>
+    <h4>Trabajo de Escritorio</h4>
+    <ul>
+      <li>Dominio de Windows y Linux</li>
+      <li>Paquete Office (Word, Excel, PowerPoint)</li>
+      <li>Manejo básico de software de edición</li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>Conocimiento Informático</h4>
+    <ul>
+      <li>Reparación y mantenimiento de PCs</li>
+      <li>Instalación de sistemas operativos</li>
+      <li>Configuración de redes domésticas</li>
+      <li>Diagnóstico de fallas en hardware y software</li>
+    </ul>
+  </div>
+</div>
+
+
+      <section class="experiencia" >
+        <h3 id="exp">Experiencia</h3>
         <p>
-          Dentro de mi experiencia como Tecnico Informatico, tuve la oportunidad
-          de poder trabajar con mucha gente sobre sus computadoras, ya sea para
-          arreglos o para mantenimientos. Cuento con una gran manera de
-          comuncarme con los clientes
+          A lo largo de los últimos años, he trabajado de forma independiente ofreciendo servicios de reparación, limpieza y mejora de rendimiento de computadoras. Esta experiencia me permitió entender la importancia de la confianza con el cliente, el trabajo rápido y eficiente, y la comunicación clara.
         </p>
         <p>
-          Dentro de mi experiencia como Tecnico informatico realize pasantias en
-          una empresa llamada Filtron donde realize tareas de base de datos
-          (MySql), y con HTML, CSS y JAVASCRIPT realize un sistema donde ellos
-          podian mediante una interfaz podian consultar desde informacion sobre
-          sus productos, stock, planos y compradores comunes hatsa las piezas
-          que se utilizan para fabricar sus productos (filtros) y planos
+          Realicé una pasantía en la empresa Filtron, donde tuve la oportunidad de participar en un proyecto web desarrollado con HTML, CSS, JavaScript y MySQL. Allí creamos una plataforma interna donde los empleados podían consultar información sobre productos, planos, stock y piezas específicas de fabricación. Fue una experiencia enriquecedora tanto en lo técnico como en el trabajo en equipo.
         </p>
       </section>
-      <section class="contacto" id="cont">
-        <h3>Contacto</h3>
+
+      <section class="contacto" >
+        <h3 id="cont">Contacto</h3>
         <p>
-          Para poder ponernos en contacto en el caso de que te haya llamado la
-          atencion mi portafolio te inivito a comunicarte conmigo para poder
-          hablar
+          Si mi perfil te resultó interesante y querés comunicarte conmigo para propuestas laborales, colaboraciones o simplemente para charlar sobre tecnología, podés encontrarme en las siguientes plataformas:
         </p>
         <div class="redes">
-          <a href="whatsapp"></a>
-          <a href="instagram"></a>
-          <a href="computrabajo"></a>
-          <a href="linkedin"></a>
-          <a href="portafolio"></a>
+          <a href="#">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">Computrabajo</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
         </div>
       </section>
-      <h5><a href="#inicio">Volver al inicio</a></h5>
+
+      <h5 style="text-align: center; margin: 20px;"><a href="#inicio">Volver al inicio</a></h5>
     </main>
+
     <footer>
-      <p>@Derechos de autor del portafolio para Pedro Baez</p>
-      <p>Se agradece como frameworks donde se usaron botones y iconos a</p>
-      <a href="botstrap">Boostrap</a>
+      <p>© 2025 Pedro Baez - Todos los derechos reservados</p>
+      <p>Agradecimientos a herramientas como <a href="#">Bootstrap</a> y <a href="#">Visual Studio Code</a>.</p>
     </footer>
   </body>
 </html>
