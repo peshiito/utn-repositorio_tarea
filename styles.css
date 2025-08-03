@@ -136,17 +136,17 @@ body {
 }
 
 .nombre h1 {
-  font-size: 2rem;
+  font-size: 30px;
 }
 
 .nombre h2 {
-  font-size: 1rem;
+  font-size: 20px;
   color: #39a8f8;
 }
 
 .nombre p {
   margin-top: 10px;
-  font-size: 0.9rem;
+  font-size: 18px;
 }
 
 /* Ajuste horizontal en pantallas grandes */
@@ -224,7 +224,6 @@ p {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #39a8f8;
-  
 }
 /* ==== Listas en columnas lado a lado (Trabajo de escritorio + Conocimiento informático) ==== */
 .listas-dobles {
@@ -260,7 +259,6 @@ p {
     width: 48%;
   }
 }
-
 
 /* REDES */
 .redes {
