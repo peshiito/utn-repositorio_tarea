@@ -15,6 +15,60 @@ body {
   color: #f0f0f0;
   font-family: "Fjalla One", sans-serif;
   line-height: 1.5;
+  font-size: 16px;
+}
+
+/* ---- TIPOGRAFIA RESPONSIVE ---- */
+@media (min-width: 480px) {
+  body {
+    font-size: 17px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
 }
 
 /* HEADER */
@@ -149,7 +203,6 @@ body {
   font-size: 18px;
 }
 
-/* Ajuste horizontal en pantallas grandes */
 @media (min-width: 768px) {
   .titulo {
     flex-direction: row;
@@ -166,7 +219,7 @@ body {
   }
 }
 
-/* SECCIONES */
+/* ---- SECCIONES GENERALES ---- */
 section {
   padding: 20px 15px;
   margin: 10px;
@@ -181,10 +234,11 @@ h3 {
 
 p {
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 18px;
   color: #d0d0d0;
 }
 
+/* ---- HABILIDADES ---- */
 .icons_prog {
   margin: 50px;
   display: grid;
@@ -220,12 +274,14 @@ p {
   transform: scale(1.1);
   filter: brightness(1.2);
 }
+
 .habilidades h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #39a8f8;
 }
-/* ==== Listas en columnas lado a lado (Trabajo de escritorio + Conocimiento informático) ==== */
+
+/* ---- LISTAS DOBLES (conocimientos/trabajo) ---- */
 .listas-dobles {
   display: flex;
   flex-direction: column;
@@ -245,7 +301,7 @@ p {
 }
 
 .listas-dobles ul {
-  padding-left: 1.2rem;
+  padding-left: 40px;
   list-style: disc;
 }
 
@@ -260,7 +316,7 @@ p {
   }
 }
 
-/* sección de cartas */
+/* ---- EXPERIENCIA ---- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -342,7 +398,6 @@ p {
   margin-bottom: 15px;
 }
 
-/* boton carta */
 .info-card .btn {
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -359,31 +414,138 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
-.
 
-/* REDES */
+/* ---- EXPERIENCIA (PC) ---- */
+.img_pc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.experiencia h4 {
+  font-size: 25px;
+  color: #39a8f8;
+}
+
+.pc h5 {
+  font-size: 20px;
+  color: #00c8ff;
+}
+
+.pc ul {
+  color: rgb(208, 208, 208);
+  list-style: disc;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.img_pc img {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+/* ---- EXPERIENCIA (CONSOLAS) ---- */
+.conso h5 {
+  font-size: 20px;
+  color: #00c8ff;
+}
+
+.conso ul {
+  color: rgb(208, 208, 208);
+  list-style: disc;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.img_plays {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.img_plays img {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+/* ---- EXPERIENCIA (GRAFICAS) ---- */
+.graficas h5 {
+  font-size: 20px;
+  color: #00c8ff;
+}
+
+.graficas ul {
+  color: rgb(208, 208, 208);
+  list-style: disc;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.img_graf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.img_graf img {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+/* ---- REDES ---- */
 .redes {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
 }
 
+.redes .icono {
+  font-size: 60px;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.redes .icono:hover {
+  transform: scale(1.2);
+}
+
+.whatsapp:hover {
+  color: #25d366;
+}
+
+.instagram:hover {
+  color: #e4405f;
+}
+
+.linkedin:hover {
+  color: #0077b5;
+}
+
+.github:hover {
+  color: #4078c0;
+}
+
 .redes a {
-  background-color: #444;
-  padding: 8px 12px;
-  color: white;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: 0.3s;
 }
 
-.redes a:hover {
-  background-color: #000;
-}
-
-/* FOOTER */
+/* ---- FOOTER ---- */
 footer {
   text-align: center;
   padding: 15px;
