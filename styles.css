@@ -2,7 +2,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 10%;
+  scroll-padding-top: 15%;
 }
 
 * {
@@ -477,6 +477,17 @@ p {
   height: 150px;
   border-radius: 10px;
   margin: 5px 0;
+}
+
+/* PROYECTOS */
+.proyectos {
+  gap: 30px;
+}
+.proyectos h3 {
+  font-size: 30px;
+}
+.proyectos .escuela_domotica {
+  border: 1px solid black;
 }
 
 /* ---- EXPERIENCIA (GRAFICAS) ---- */
