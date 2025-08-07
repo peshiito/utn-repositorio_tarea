@@ -1,2 +1,3 @@
-# utn-repositorio_tarea
-Este repositorio es para subir el primer trabajo de repositorio
+Trabajo de repositorio para entregar
+
+se utilizaron librerias y Frameworks como: Bootstrap, Icons8 y Freepik

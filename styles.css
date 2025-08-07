@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
+/*
+  Paleta de colores alternativa:
+  - Fondo oscuro: #1e1e1e (gris muy oscuro)
+  - Texto principal: #f5f5dc (crema claro)
+  - Color de acento 1: #d3753f (naranja terroso para títulos y elementos principales)
+  - Color de acento 2: #8a9c68 (verde oliva para subtítulos y detalles)
+  - Contenedores/tarjetas: #282828 (gris un poco más claro)
+  - Hover/interacciones: #454545 (gris medio)
+  - Nuevo color para aside: #2e2e2e (gris ligeramente más claro)
+*/
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 15%;
@@ -12,8 +23,8 @@ html {
 }
 
 body {
-  background-color: #1e242a;
-  color: #f0f0f0;
+  background-color: #1e1e1e;
+  color: #f5f5dc;
   font-family: "Fjalla One", sans-serif;
   line-height: 1.5;
   font-size: 16px;
@@ -72,13 +83,187 @@ body {
   }
 }
 
-/* HEADER */
+/* ---- LAYOUT CON GRID ---- */
+.grid_container {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto auto 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  grid-area: header;
+  color: #f5f5dc;
+  padding: 20px;
+  height: 80px;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  min-height: 400px;
+  margin-top: 90px;
+}
+
+.asider {
+  grid-area: aside;
+  background-color: #2e2e2e;
+  border-left: 4px solid #d3753f;
+  padding: 20px;
+  width: 250px;
+  min-height: 400px;
+  margin-top: 230px;
+  position: fixed;
+}
+
+.footer {
+  grid-area: footer;
+  color: #f5f5dc;
+  padding: 20px;
+  height: 100px;
+  text-align: center;
+  border-top: 2px solid #d3753f;
+}
+
+/* --- REGLAS DE VISIBILIDAD DE PROYECTOS Y ASIDE --- */
+.link_movil {
+  display: none;
+}
+
+.proyectos_desktop {
+  display: block;
+  text-align: center;
+}
+
+.proyectos_desktop a {
+  text-decoration: none;
+  color: #f5f5dc;
+}
+
+/* ---- MEDIA QUERIES PARA ADAPTAR EL LAYOUT ---- */
+
+/* PANTALLAS GRANDES (1201px a 1599px) */
+@media screen and (min-width: 1201px) and (max-width: 1599px) {
+  .grid_container {
+    max-width: 1600px;
+    grid-template-columns: 300px auto;
+    gap: 30px;
+  }
+
+  .asider {
+    width: 300px;
+    margin-top: 260px;
+  }
+
+  .main {
+    margin-top: 110px;
+  }
+
+  .heading {
+    height: 100px;
+  }
+
+  .footer {
+    height: 120px;
+  }
+}
+
+/* PANTALLAS MUY GRANDES (1600px en adelante) */
+@media screen and (min-width: 1600px) {
+  .grid_container {
+    max-width: 1900px;
+    grid-template-columns: 350px auto;
+    gap: 40px;
+  }
+
+  .asider {
+    width: 350px;
+    margin-top: 280px;
+  }
+
+  .main {
+    margin-top: 120px;
+  }
+
+  .heading {
+    height: 110px;
+  }
+
+  .footer {
+    height: 140px;
+  }
+}
+
+/* PANTALLAS MEDIANAS (hasta 991px) - Móvil */
+@media screen and (max-width: 991px) {
+  .grid_container {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: auto;
+  }
+
+  .asider {
+    display: none;
+    margin-top: 0;
+  }
+
+  .main {
+    margin-top: 90px;
+    margin-left: 0;
+  }
+
+  .link_movil {
+    display: block;
+  }
+
+  .proyectos_desktop {
+    display: none;
+  }
+
+  .heading,
+  .main,
+  .footer {
+    width: 100%;
+  }
+}
+
+/* PANTALLAS PEQUEÑAS (hasta 767px) - Móvil */
+@media screen and (max-width: 767px) {
+  .grid_container {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .heading {
+    height: 80px;
+  }
+
+  .footer {
+    height: 80px;
+  }
+
+  .main {
+    padding: 15px;
+    margin-top: 80px;
+  }
+}
+
+/* ---- ESTILOS HEADER ---- */
 .heading {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #2c353d;
+  background-color: #282828;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -93,14 +278,14 @@ body {
 .menu-icon {
   font-size: 1.8rem;
   cursor: pointer;
-  color: #ffffff;
+  color: #f5f5dc;
   display: block;
 }
 
 .menu {
   display: none;
   flex-direction: column;
-  background-color: #2c353d;
+  background-color: #282828;
   position: absolute;
   top: 55px;
   left: 0;
@@ -112,14 +297,14 @@ body {
 }
 
 .menu li {
-  border-top: 1px solid #444;
+  border-top: 1px solid #454545;
   padding: 10px 20px;
 }
 
 .menu li a {
-  color: white;
+  color: #f5f5dc;
   text-decoration: none;
-  background-color: #444;
+  background-color: transparent;
   padding: 8px 12px;
   border-radius: 8px;
   display: block;
@@ -127,7 +312,7 @@ body {
 }
 
 .menu li a:hover {
-  background-color: #000;
+  background-color: #454545;
   transform: scale(1.05);
 }
 
@@ -135,7 +320,7 @@ body {
   display: flex;
 }
 
-/* --- Estilo desktop --- */
+/* --- Estilo desktop del menú --- */
 @media (min-width: 768px) {
   .menu-icon {
     display: none;
@@ -166,11 +351,11 @@ body {
   }
 
   .menu li a:hover {
-    background-color: #444;
+    background-color: #454545;
   }
 }
 
-/* HERO */
+/* ---- HERO ---- */
 .titulo {
   margin-top: 100px;
   display: flex;
@@ -179,10 +364,10 @@ body {
   text-align: center;
   gap: 20px;
   padding: 20px;
-  background-color: #2c2f36;
-  border: 2px solid #ffffff;
+  background-color: #282828;
+  border: 2px solid #d3753f;
   border-radius: 10px;
-  margin: 120px 15px 20px;
+  margin: 100px 15px 20px;
 }
 
 .titulo img {
@@ -196,7 +381,7 @@ body {
 
 .nombre h2 {
   font-size: 20px;
-  color: #39a8f8;
+  color: #d3753f;
 }
 
 .nombre p {
@@ -224,19 +409,20 @@ body {
 section {
   padding: 20px 15px;
   margin: 40px 0;
-  background-color: #2a2e35;
+  background-color: #282828;
   border-radius: 10px;
 }
 
 h3 {
   margin-bottom: 10px;
   font-size: 30px;
+  color: #d3753f;
 }
 
 p {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #d0d0d0;
+  color: #d5d5c0;
 }
 
 /* ---- HABILIDADES ---- */
@@ -267,7 +453,7 @@ p {
 
 .con_icon p {
   margin: 0;
-  color: #ffffff;
+  color: #f5f5dc;
   font-size: 0.9rem;
 }
 
@@ -279,7 +465,7 @@ p {
 .habilidades h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #39a8f8;
+  color: #d3753f;
 }
 
 /* ---- LISTAS DOBLES (conocimientos/trabajo) ---- */
@@ -292,13 +478,14 @@ p {
 }
 
 .listas-dobles div {
-  background-color: #2a2e35;
+  background-color: #282828;
   padding: 1rem;
   border-radius: 10px;
 }
 
 .listas-dobles h4 {
   margin-bottom: 10px;
+  color: #8a9c68;
 }
 
 .listas-dobles ul {
@@ -362,7 +549,7 @@ p {
   top: 0;
   left: 0;
   border-radius: 40px;
-  background: linear-gradient(to bottom, rgba(32, 27, 27, 0), rgb(42, 35, 35));
+  background: linear-gradient(to bottom, rgba(30, 30, 30, 0), rgb(40, 40, 40));
   opacity: 0;
   transition: opacity 0.5s;
   z-index: 2;
@@ -375,7 +562,7 @@ p {
 .info-card {
   position: relative;
   z-index: 3;
-  color: white;
+  color: #f5f5dc;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.5s ease;
@@ -391,6 +578,7 @@ p {
 .info-card h4 {
   font-size: 1.4rem;
   margin-bottom: 10px;
+  color: #d3753f;
 }
 
 .info-card p {
@@ -402,8 +590,8 @@ p {
 .info-card .btn {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  background-color: #4b5563;
-  color: #fff;
+  background-color: #454545;
+  color: #f5f5dc;
   font-weight: bold;
   border-radius: 50px;
   transition: all 0.3s ease-in;
@@ -411,9 +599,9 @@ p {
 }
 
 .info-card .btn:hover {
-  background-color: #1f2937;
+  background-color: #1e1e1e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #f5f5dc;
 }
 
 /* ---- EXPERIENCIA (PC) ---- */
@@ -428,16 +616,16 @@ p {
 
 .experiencia h4 {
   font-size: 25px;
-  color: #39a8f8;
+  color: #d3753f;
 }
 
 .pc h5 {
   font-size: 20px;
-  color: #00c8ff;
+  color: #8a9c68;
 }
 
 .pc ul {
-  color: rgb(208, 208, 208);
+  color: #d5d5c0;
   list-style: disc;
   padding-left: 40px;
   margin-bottom: 15px;
@@ -453,11 +641,11 @@ p {
 /* ---- EXPERIENCIA (CONSOLAS) ---- */
 .conso h5 {
   font-size: 20px;
-  color: #00c8ff;
+  color: #8a9c68;
 }
 
 .conso ul {
-  color: rgb(208, 208, 208);
+  color: #d5d5c0;
   list-style: disc;
   padding-left: 40px;
   margin-bottom: 15px;
@@ -485,11 +673,12 @@ p {
 }
 .proyectos h3 {
   font-size: 30px;
+  color: #d3753f;
 }
 .proyectos .escuela_domotica .glass,
 .proyectos .gimnasio,
 .proyectos .abogados {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(40, 40, 40, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -508,20 +697,18 @@ p {
 
 .proyectos h4 {
   font-size: 1.5rem;
-  color: #1ad2f3;
+  color: #8a9c68;
   margin-bottom: 10px;
 }
 
-.proyectos p{
+.proyectos p {
   color: #e0e0e0;
 }
 
 .proyectos a {
   text-decoration: underline;
+  color: #d3753f;
 }
-/* ESCUELA DOMOTICA */
-
-/* PROYECTO GIMNASIO */
 /* CARRUSEL DE IMAGENES */
 .carrusel-gim {
   max-width: 600px;
@@ -551,11 +738,11 @@ p {
 /* ---- EXPERIENCIA (GRAFICAS) ---- */
 .graficas h5 {
   font-size: 20px;
-  color: #00c8ff;
+  color: #8a9c68;
 }
 
 .graficas ul {
-  color: rgb(208, 208, 208);
+  color: #d5d5c0;
   list-style: disc;
   padding-left: 40px;
   margin-bottom: 15px;
@@ -587,7 +774,7 @@ p {
 
 .redes .icono {
   font-size: 60px;
-  color: black;
+  color: #f5f5dc;
   transition: all 0.3s ease;
 }
 
@@ -615,17 +802,38 @@ p {
   text-decoration: none;
 }
 
+.asider .titulo_aside {
+    display: flex;
+    font-size: 25px;
+
+}
+.asider .titulo_aside a {
+    color: #d3753f;
+}
+.asider .interior_aside {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.interior_aside a{
+    transition: all 0.5s ease-in-out;
+}
+.interior_aside a:hover {
+    transform: scale(1.2);
+    color: #d3753f;
+}
 /* ---- FOOTER ---- */
 footer {
   text-align: center;
   padding: 15px;
   font-size: 0.8rem;
-  background-color: #1a1d22;
+  background-color: #1e1e1e;
   margin-top: 30px;
-  color: #aaa;
+  color: #d5d5c0;
+  border-top: 2px solid #d3753f;
 }
 
 footer a {
-  color: #f0f0f0;
+  color: #f5f5dc;
   text-decoration: underline;
 }
