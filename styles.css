@@ -1,19 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-/*
-  Paleta de colores ( recordatorio = acomodar y borrar este comentario )
-  - Fondo oscuro: #1e1e1e (gris muy oscuro)
-  - Texto principal: #f5f5dc (crema claro)
-  - Color de acento 1: #d3753f (naranja terroso para títulos y elementos principales)
-  - Color de acento 2: #8a9c68 (verde oliva para subtítulos y detalles)
-  - Contenedores/tarjetas: #282828 (gris un poco más claro)
-  - Hover/interacciones: #454545 (gris medio)
-  - Nuevo color para aside: #2e2e2e (gris ligeramente más claro)
-*/
-
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 15%;
+  scroll-padding-top: 110px;
 }
 
 * {
@@ -92,7 +81,7 @@ body {
     "aside main"
     "footer footer";
   grid-template-columns: 250px auto;
-  grid-template-rows: auto auto 100px;
+  grid-template-rows: auto 1fr auto;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -103,13 +92,23 @@ body {
   color: #f5f5dc;
   padding: 20px;
   height: 80px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282828;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
 }
 
 .main {
   grid-area: main;
   padding: 20px;
   min-height: 400px;
-  margin-top: 90px;
+  margin-top: 0;
 }
 
 .asider {
@@ -119,8 +118,11 @@ body {
   padding: 20px;
   width: 250px;
   min-height: 400px;
-  margin-top: 230px;
   position: fixed;
+  left: auto;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .footer {
@@ -156,14 +158,16 @@ body {
     grid-template-columns: 300px auto;
     gap: 30px;
   }
+  html {
+    scroll-padding-top: 100px;
+  }
 
   .asider {
     width: 300px;
-    margin-top: 260px;
   }
 
   .main {
-    margin-top: 110px;
+    margin-top: 0;
   }
 
   .heading {
@@ -182,14 +186,16 @@ body {
     grid-template-columns: 350px auto;
     gap: 40px;
   }
+  html {
+    scroll-padding-top: 110px;
+  }
 
   .asider {
     width: 350px;
-    margin-top: 280px;
   }
 
   .main {
-    margin-top: 120px;
+    margin-top: 0;
   }
 
   .heading {
@@ -213,11 +219,10 @@ body {
 
   .asider {
     display: none;
-    margin-top: 0;
   }
 
   .main {
-    margin-top: 90px;
+    margin-top: 0;
     margin-left: 0;
   }
 
@@ -233,6 +238,9 @@ body {
   .main,
   .footer {
     width: 100%;
+  }
+  html {
+    scroll-padding-top: 80px;
   }
 }
 
@@ -253,22 +261,15 @@ body {
 
   .main {
     padding: 15px;
-    margin-top: 80px;
+    margin-top: 0;
+  }
+  html {
+    scroll-padding-top: 80px;
   }
 }
 
 /* ---- ESTILOS HEADER ---- */
 .heading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #282828;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
 }
 
 .menu-toggle {
@@ -320,7 +321,7 @@ body {
   display: flex;
 }
 
-/* --- Estilo desktop del menú --- */
+/* --- Estilo desktop del menu --- */
 @media (min-width: 768px) {
   .menu-icon {
     display: none;
@@ -357,7 +358,7 @@ body {
 
 /* ---- HERO ---- */
 .titulo {
-  margin-top: 100px;
+  margin-top: 0;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -367,7 +368,9 @@ body {
   background-color: #282828;
   border: 2px solid #d3753f;
   border-radius: 10px;
-  margin: 100px 15px 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .titulo img {
@@ -405,7 +408,6 @@ body {
   }
 }
 
-/* ---- SECCIONES GENERALES ---- */
 section {
   padding: 20px 15px;
   margin: 40px 0;
@@ -667,6 +669,35 @@ p {
   margin: 5px 0;
 }
 
+/* ---- EXPERIENCIA (GRAFICAS) ---- */
+.graficas h5 {
+  font-size: 20px;
+  color: #8a9c68;
+}
+
+.graficas ul {
+  color: #d5d5c0;
+  list-style: disc;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.img_graf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.img_graf img {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
 /* PROYECTOS */
 .proyectos {
   gap: 30px;
@@ -735,34 +766,6 @@ p {
     height: 400px;
   }
 }
-/* ---- EXPERIENCIA (GRAFICAS) ---- */
-.graficas h5 {
-  font-size: 20px;
-  color: #8a9c68;
-}
-
-.graficas ul {
-  color: #d5d5c0;
-  list-style: disc;
-  padding-left: 40px;
-  margin-bottom: 15px;
-}
-
-.img_graf {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.img_graf img {
-  width: 250px;
-  height: 150px;
-  border-radius: 10px;
-  margin: 5px 0;
-}
 
 /* ---- REDES ---- */
 .redes {
@@ -803,24 +806,23 @@ p {
 }
 
 .asider .titulo_aside {
-    display: flex;
-    font-size: 25px;
-
+  display: flex;
+  font-size: 25px;
 }
 .asider .titulo_aside a {
-    color: #d3753f;
+  color: #d3753f;
 }
 .asider .interior_aside {
-    display: flex;
-    margin-left: 20px;
-    margin-top: 20px;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
 }
-.interior_aside a{
-    transition: all 0.5s ease-in-out;
+.interior_aside a {
+  transition: all 0.5s ease-in-out;
 }
 .interior_aside a:hover {
-    transform: scale(1.2);
-    color: #d3753f;
+  transform: scale(1.2);
+  color: #d3753f;
 }
 /* ---- FOOTER ---- */
 footer {
